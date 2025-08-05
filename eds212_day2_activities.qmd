@@ -13,13 +13,6 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
-```{r}
-#Creating a version-controlled repository
-library(usethis)
-usethis::use_git()
-usethis::use_github()
-```
-
 ## Finding derivatives using R
 
 ### *f(x) = x\^2 at x= 3*
@@ -66,7 +59,7 @@ library(palmerpenguins)
 # create plot ----
 ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
   geom_point(aes(color = species)) +
-  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  scale_color_manual(values = c("red","purple","cyan4")) +
   labs(x = "Bill Length (mm)",
        y = "Bill Depth (mm)",
        title = "Palmer penguin size measurements",
