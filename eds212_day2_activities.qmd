@@ -12,3 +12,18 @@ editor: visual
 library(tidyverse)
 library(palmerpenguins)
 ```
+
+```{r}
+#Creating a version-controlled repository
+library(usethis)
+usethis::use_git()
+usethis::use_github()
+```
+
+## Finding derivatives using R
+
+### *f(x) = x\^2 at x= 3*
+
+```{r}
+
+```
