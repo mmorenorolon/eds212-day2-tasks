@@ -1,0 +1,14 @@
+---
+title: "eds212-day2-tasks"
+author: "Melannie Moreno Rolon"
+format: html
+editor: visual
+---
+
+# Section 3: Derivatives in R
+
+```{r}
+#attaching libraries
+library(tidyverse)
+library(palmerpenguins)
+```
