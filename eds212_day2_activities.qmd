@@ -25,5 +25,31 @@ usethis::use_github()
 ### *f(x) = x\^2 at x= 3*
 
 ```{r}
+#expression
+fx <- expression(x^2)
 
+#derivative with respect to x
+df <- D(expr = fx, name = "x")
+df
+
+#evaluate slope at x = 3
+x <- 3
+eval(df)
 ```
+
+### *P(a) = 2(3a +2)\^4  - 5 at a = 1.2*
+
+```{r}
+#create exoression
+dp <- expression(2 * (3 * a + 2)^4 - 5)
+
+#derivative with respect to a 
+dp_da <- D(expr = dp, name = "a")
+dp_da
+
+#evaluate slope at a = 1.2
+a <- 1.2
+eval(dp_da)
+```
+
+###   
