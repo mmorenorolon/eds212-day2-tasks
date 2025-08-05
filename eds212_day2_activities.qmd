@@ -69,4 +69,25 @@ ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
   theme_minimal()
 ```
 
+```{r}
+#jitter plot of flipper length by species
+geom_jitter(
+  mapping = aes(x = species, y = flipper_length_mm),
+  data = penguins,
+  stat = "identity",
+  position = "jitter",
+  width = NULL,
+  height = 4,
+  na.rm = FALSE,
+  show.legend = NA,
+  inherit.aes = TRUE
+) + labs(x = "Species",
+       y = "Flipper Length",
+       title = "Palmer penguin size measurements",
+       subtitle = "Palmer Archipelago, Antarctice (2007 - 2009)",
+       caption = "Collected by Dr. Kristen Gorman and colleagues at Palmer Station LTER") +
+  facet_wrap(~island) +
+  theme_minimal()
+```
+
 #  
