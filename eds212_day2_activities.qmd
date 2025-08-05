@@ -52,4 +52,28 @@ a <- 1.2
 eval(dp_da)
 ```
 
-###   
+# Section 4:  Make another penguin plot
+
+```{r}
+#adding libraries
+library(tidyverse)
+library(ggplot2)
+library(palmerpenguins)
+```
+
+```{r}
+
+# create plot ----
+ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point(aes(color = species)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Bill Length (mm)",
+       y = "Bill Depth (mm)",
+       title = "Palmer penguin size measurements",
+       subtitle = "Palmer Archipelago, Antarctice (2007 - 2009)",
+       caption = "Collected by Dr. Kristen Gorman and colleagues at Palmer Station LTER") +
+  facet_wrap(~island) +
+  theme_minimal()
+```
+
+#  
