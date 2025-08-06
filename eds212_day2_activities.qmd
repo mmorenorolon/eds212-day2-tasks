@@ -30,7 +30,7 @@ x <- 3
 eval(df)
 ```
 
-### *P(a) = 2(3a +2)\^4  - 5 at a = 1.2*
+### *P(a) = 2(3a +2)\^4 - 5 at a = 1.2*
 
 ```{r}
 #create exoression
@@ -45,7 +45,7 @@ a <- 1.2
 eval(dp_da)
 ```
 
-# Section 4:  Make another penguin plot
+# Section 4: Make another penguin plot
 
 ```{r}
 #adding libraries
@@ -59,11 +59,11 @@ library(palmerpenguins)
 # create plot ----
 ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
   geom_point(aes(color = species)) +
-  scale_color_manual(values = c("red","purple","cyan4")) +
+  scale_color_manual(values = c("orange","purple","cyan4")) +
   labs(x = "Bill Length (mm)",
        y = "Bill Depth (mm)",
-       title = "Palmer penguin size measurements",
-       subtitle = "Palmer Archipelago, Antarctice (2007 - 2009)",
+       title = "Palmer penguin bill size measurements",
+       subtitle = "Palmer Archipelago, Antarctica (2007 - 2009)",
        caption = "Collected by Dr. Kristen Gorman and colleagues at Palmer Station LTER") +
   facet_wrap(~island) +
   theme_minimal()
@@ -71,23 +71,14 @@ ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
 
 ```{r}
 #jitter plot of flipper length by species
-geom_jitter(
-  mapping = aes(x = species, y = flipper_length_mm),
-  data = penguins,
-  stat = "identity",
-  position = "jitter",
-  width = NULL,
-  height = 4,
-  na.rm = FALSE,
-  show.legend = NA,
-  inherit.aes = TRUE
-) + labs(x = "Species",
-       y = "Flipper Length",
-       title = "Palmer penguin size measurements",
-       subtitle = "Palmer Archipelago, Antarctice (2007 - 2009)",
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) + 
+         geom_jitter(aes(color = species)) + 
+  scale_color_manual(values = c("orange", "purple", "cyan4")) + 
+  labs(x = "Species",
+       y = "Flipper Length (mm)",
+       title = "Flipper length variation by species ",
+       subtitle = "Palmer Archipelago, Antarctica (2007 - 2009)",
        caption = "Collected by Dr. Kristen Gorman and colleagues at Palmer Station LTER") +
-  facet_wrap(~island) +
-  theme_minimal()
+  facet_wrap(~island) + 
+    theme_minimal()
 ```
-
-#  
